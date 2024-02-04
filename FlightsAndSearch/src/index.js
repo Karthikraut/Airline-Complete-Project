@@ -15,6 +15,6 @@ const setupAndStartServer = async()=>{
         console.log(`Server started at ${PORT}`)
       //  console.log(process.env) // remove this after you've confirmed it is working
     })
-}
+} 
 
 setupAndStartServer();

@@ -2,7 +2,7 @@
 
 ##Project Setuo
     - clone the project on your local
-    - Excecute 'npm install' on the same path as of your root directory of ownloaded project
+    - Excecute `npm install` on the same path as of your root directory of ownloaded project
     -create a `.env` file in the root director and add the followning enviornment variable
         - `PORT= 3000` 
     
@@ -19,3 +19,4 @@
         },
     }
 
+Once you've added your db config as listed above, go to the src folder from your terminal and exceute `npx sequelize db:create`

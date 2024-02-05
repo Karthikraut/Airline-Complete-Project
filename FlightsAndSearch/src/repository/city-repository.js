@@ -26,13 +26,13 @@ class CityRepository{
 
     async updateCity({cityId},data){
         try{
-            const city =await City.update(data,{
+            const city =await City.update(data,{ //{ name: "Prayagraj" }
                 where :{
                     id : cityId
                 }
             });
             return city;
-            
+
         } catch(error){
             console.log("Something Went Wrong in Repository Layer.");
             throw {error};

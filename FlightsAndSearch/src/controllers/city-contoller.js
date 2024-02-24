@@ -29,7 +29,7 @@ const create  = async (req,res)=>{
 
 const destroy  =async (req,res)=>{
     try{
-        const city = await cityService.deleteCity(req.body);
+        const city = await cityService.deleteCity(req.params.id);
         return res.status(200).json({
             data : city,
             sucess: true,
@@ -83,7 +83,7 @@ const get  =async (req,res)=>{
         console.log(error);
         return res.status(500).json({
             data: {},
-            sucess: false,
+            success: false,
             message: 'Not able to Get a city',
             err: error
         })

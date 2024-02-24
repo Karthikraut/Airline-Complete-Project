@@ -1,4 +1,5 @@
 const CityService =require('../services/city-service')
+
 /** 
  * POST
  * data =  req.body
@@ -92,10 +93,10 @@ const get  =async (req,res)=>{
 
 const getAll  =async (req,res) =>{
     try{
-        const cities = await cityService.getAll();
+        const cities = await cityService.getAll(req.query); //URL QUERY PARAMS AND REQUEST PARAMS Difference find out H.W
         return res.status(200).json({
             data : cities,
-            sucess: true,
+            success: true,
             message: 'Sucessfully Get all cities',
             err: {}
         })

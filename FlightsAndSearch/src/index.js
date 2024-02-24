@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser =require("body-parser");
+const {City} =require('./models/index');
 const CityRepository =require('./repository/city-repository')
 
 
@@ -17,7 +18,10 @@ const setupAndStartServer = async()=>{
         console.log(`Server started at ${PORT}`)
       //  console.log(process.env) // remove this after you've confirmed it is working
         const repo =new CityRepository();
-        repo.createCity({name : "New Delhi"})
+        repo.createCity({name : "Mumbai"})
+        // await City.create({
+        //   name: "New Delhi"
+        // })
         
     })
 } 

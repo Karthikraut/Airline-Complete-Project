@@ -7,7 +7,7 @@ const {Airport, City} = require('./models/index');
 
 const {PORT} =require('./config/serverConfig');
 
-
+const db = require('./models/index');
 const setupAndStartServer = async()=>{
     //Create the Express Object
     const app =express();
@@ -28,12 +28,18 @@ const setupAndStartServer = async()=>{
         //   name: "New Delhi"
         // })
 
-        const airports = await Airport.findAll({
-          include: [{
-            model: City
-          }]
-        });
-        console.log(airports);
+        // const airports = await Airport.findAll({
+        //   include: [{
+        //     model: City
+        //   }]
+        // });
+        // console.log(airports);
+
+        //Syncronizing A DATABase
+
+        if(process.env.SYNC_DB){
+          db.sequelize.sync({alter:true});
+        }
         
     })
 } 

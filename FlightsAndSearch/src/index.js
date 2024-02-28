@@ -3,6 +3,8 @@ const bodyParser =require("body-parser");
 
 const ApiRoutes = require('./routes/index');
 
+const {Airport, City} = require('./models/index');
+
 const {PORT} =require('./config/serverConfig');
 
 
@@ -25,6 +27,13 @@ const setupAndStartServer = async()=>{
         // await City.create({
         //   name: "New Delhi"
         // })
+
+        const airports = await Airport.findAll({
+          include: [{
+            model: City
+          }]
+        });
+        console.log(airports);
         
     })
 } 

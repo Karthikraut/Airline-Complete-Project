@@ -70,8 +70,30 @@ const isAuthenticated = async (req,res) =>{
     }
 }
 
+const validateAdmin = async (req,res) =>{
+    try{
+        const response = await userService.isAdmin(req.body.userId);
+        return res.status(200).json({
+            success: true,
+            data: response,
+            err: {},
+            message: "Validation of User as a Admin is Sucessful."
+        });
+    } catch(error){
+        console.log(error);
+        console.log("Error At Controller Layer.")
+        return res.status(500).json({
+            message: 'Something went wrong',
+            data: {},
+            success: false,
+            err: error
+        })
+    }
+}
+
 module.exports= {
     create,
     signIn,
-    isAuthenticated
+    isAuthenticated,
+    validateAdmin
 }

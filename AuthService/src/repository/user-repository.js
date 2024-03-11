@@ -26,13 +26,26 @@ class UserRepository{
         }
     }
 
-    async get(userId){
+    async getById(userId){
         try{
             const user = await User.findByPk(userId,{
                 attributes: ['email', 'id']
             })
+            return user;
         }catch(error){
             console.log("Something went Wrong in Repo Layer");
+            throw error;
+        }
+    }
+
+    async getByEmail(emailId){
+        try {
+            const user = await User.findOne({
+                where: { email : emailId}
+            });
+            return user;
+        } catch (error) {
+            console.log("Something Went wrong at repository layer.")
             throw error;
         }
     }

@@ -19,9 +19,9 @@ const prepareAndStartServer =()=>{
         const service = new userService();
         // const token = service.createToken({email: 'sanket@gmail.com', id: 1});
         // console.log("New Token is : ", token);
-        const token =  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbmtldEBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNzEwMDkxNzg1LCJleHAiOjE3MTAwOTIzODV9.X91YqGaiG_y-QwotPBbk4oDH1YIQjaT-yGr6oAL3I5A';
-        const response = service.verifyToken(token);
-        console.log(response);
+        // const token =  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbmtldEBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNzEwMDkxNzg1LCJleHAiOjE3MTAwOTIzODV9.X91YqGaiG_y-QwotPBbk4oDH1YIQjaT-yGr6oAL3I5A';
+        // const response = service.verifyToken(token);
+        // console.log(response);
     })
 }
 
